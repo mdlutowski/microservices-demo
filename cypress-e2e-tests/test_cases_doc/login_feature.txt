@@ -1,0 +1,58 @@
+Feature: Log in
+
+    Background:
+        Given User is on home page
+
+    Scenario: User see correct information in login modal
+        When User opens login modal
+        Then Header is visible with correct text
+         And Username field is visible and has a placeholder
+         And Password field is visible and has a placeholder
+         And 'Log in' button is visible with correct text
+
+    Scenario: User can log in as existing platform user
+        When User opens login modal
+         And User enters username
+         And User enters password
+         And User click 'Log in' button
+        Then Successful notification is displayed
+         And User can see that platform user is visible as logged in in top container
+         And Account tab is available
+
+    Scenario: User can log out
+        Given User is already logged in
+         When User clicks 'Logout' link
+         Then User can log in again
+          And Account tab is not available
+
+    Scenario: User can log in as existing platform user A, log out and log in again as user B
+        When User logs in as platform user A
+         And User logs out
+         And User logs in again as user B
+        Then Successful notification is displayed
+         And User can see that platform user B is visible as logged in in top container
+         And Account tab is available
+
+    Scenario User cannot log in if platform user does not exist
+        When User opens login modal
+         And User enters invalid username
+         And User enters invalid password
+         And User click 'Log in' button
+        Then Correct validation notification is displayed
+         And User remains unlogged
+
+    Scenario User cannot log in if password is not entered
+        When User opens login modal
+         And User enters username
+         And User leaves empty password
+         And User click 'Log in' button
+        Then Correct validation notification is displayed
+         And User remains unlogged
+
+    Scenario: User cannot log in with no credentials
+        When User opens login modal
+         And User leaves empty username
+         And User leaves empty password
+         And User click 'Log in' button
+        Then Correct validation notification is displayed
+         And User remains unlogged
