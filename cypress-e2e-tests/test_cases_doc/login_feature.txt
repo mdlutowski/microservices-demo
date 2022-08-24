@@ -39,7 +39,7 @@ Feature: Log in
          And User enters invalid password
          And User click 'Log in' button
         Then Correct validation notification is displayed
-         And User remains unlogged
+         And Platform user remains unlogged
 
     Scenario User cannot log in if password is not entered
         When User opens login modal
@@ -47,12 +47,13 @@ Feature: Log in
          And User leaves empty password
          And User click 'Log in' button
         Then Correct validation notification is displayed
-         And User remains unlogged
+         And Platform user remains unlogged
 
+    //Test fails if empty user has been already registered
     Scenario: User cannot log in with no credentials
         When User opens login modal
          And User leaves empty username
          And User leaves empty password
          And User click 'Log in' button
         Then Correct validation notification is displayed
-         And User remains unlogged
+         And Platform user remains unlogged

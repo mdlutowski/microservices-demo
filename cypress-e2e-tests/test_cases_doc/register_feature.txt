@@ -1,0 +1,45 @@
+Feature: Register
+
+    Background:
+        Given User is on home page
+
+    Scenario: User see correct information in register modal
+        When User opens register modal
+        Then Header is visible with correct text
+         And Username field is visible and has a placeholder
+         And First name field is visible and has a placeholder
+         And Last name field is visible and has a placeholder
+         And Email field is visible and has a placeholder
+         And Password field is visible with no placeholder
+         And 'Register' button is visible with correct text
+
+    Scenario: User can register a new platform user
+        When User opens register modal
+         And User enters username
+         And User enters first name
+         And User enters last name
+         And User enter email
+         And User enters password
+         And User click 'Register' button
+        Then Successful notification is displayed
+         And User can see that platform user is createad and currently logged in in top container
+         And Account tab is available
+
+    Scenario User cannot register already existing platform user
+        When User opens register modal
+         And User enters username that is already taken
+         And User enters first name
+         And User enters last name
+         And User enter email
+         And User enters password
+         And User click 'Register' button
+        Then Correct validation notification is displayed
+         And A new platform user is not registered
+
+    //Test fails, none of fields is mandatory, so it's possible to register user with invalid data
+    Scenario User cannot register already existing platform user
+        When User opens register modal
+         And User leaves all fields empty
+         And User click 'Register' button
+        Then Correct validation notification is displayed
+         And A new platform user is not registered

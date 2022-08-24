@@ -3,5 +3,7 @@
 "pageLoadTimeout": 20000,
 "video": false,
 "viewportWidth": 1280,
-"viewportHeight": 720
+"viewportHeight": 720,
+"mainUser": "user",
+"mainPassword": "password"
 }
