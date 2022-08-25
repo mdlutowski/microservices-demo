@@ -1,7 +1,7 @@
 export const HOME = {
     MAIN_PAGE: {
         ACCOUNT_TAB: '#tabAccount',
-        // BASKET_ICON: 'fa fa-shopping-cart',
+        BASKET_BUTTON: '#basket-overview',
         CATALOGUE_OPTIONS: '.dropdown-menu a',
         CATALOGUE_TAB: '#tabCatalogue',
         LOGGEDIN_LINK: '#howdy', 
@@ -11,6 +11,7 @@ export const HOME = {
         TOP_CONTAINER: '#top'
     },
     LOGIN_MODAL: {
+        CLOSE_BUTTON: '.close',
         HEADER: '#Login',
         LOGIN_BUTTON: '.btn-primary',
         MESSAGE: '#login-message',
@@ -19,6 +20,7 @@ export const HOME = {
         USERNAME: '#username-modal'
     },
     REGISTER_MODAL: {
+        CLOSE_BUTTON: '.close',
         EMAIL: '#register-email-modal',
         FIRST_NAME: '#register-first-modal',
         HEADER: '#Login',

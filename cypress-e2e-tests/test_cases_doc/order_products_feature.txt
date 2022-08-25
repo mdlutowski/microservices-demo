@@ -1,0 +1,32 @@
+Feature: Order products
+
+    Background:
+        Given User is on Catalogue page
+          And Platform user is logged in
+
+    Scenario: User can order a product from catalogue
+        When User adds a product to the basket
+         And User goes to the basket
+         And User finalizes the order
+        Then Order is complete
+         And Correct order details are displayed
+
+    Scenario: User can order multiple products from catalogue
+        When User adds a product to the basket
+         And User adds the same product again
+         And User goes to the basket
+         And User finalizes the order
+        Then Order is complete
+
+    Scenario: User cannot order products exceeding $100
+        When User adds products exceeding $100 to the basket
+         And User goes to the basket
+         And User finalizes the order
+        Then Correct validation message is displayed
+
+    Scenario: User cannot finalized the order if shipping or payment information is missing
+        When User logs out the platform user
+         And User adds a product to the basket
+         And User goes to the basket
+         And User finalizes the order
+        Then Correct validation message is displayed

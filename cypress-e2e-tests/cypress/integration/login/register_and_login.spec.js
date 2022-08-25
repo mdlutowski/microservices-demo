@@ -61,6 +61,8 @@ context("Register a new user", () => {
          //Confirm user is not registered in & account menu not is available
         cy.get(HOME.REGISTER_MODAL.MESSAGE).should('have.text', TRANSLATION.REGISTER.INVALID_REGISTRATION)
         cy.get(HOME.MAIN_PAGE.LOGGEDIN_LINK).should('not.exist')
+        //clode modal
+        cy.get(HOME.REGISTER_MODAL.MODAL).find(HOME.REGISTER_MODAL.CLOSE_BUTTON).click()
       })
     })
 })

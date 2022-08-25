@@ -22,7 +22,6 @@ function logout() {
 }
 
 function logoutIfLoggedIn() {
-    cy.reload() //To clear all modals if opened
     cy.get('body').then($body => {
         if ($body.find(HOME.MAIN_PAGE.LOGOUT_LINK).length) {
             logout()
@@ -50,9 +49,14 @@ function register(username, firstName, lastName, email, password) {
 }
 
 function goToCatalogue() {
-    cy.reload() //to clear modals if opened
     cy.get(HOME.MAIN_PAGE.CATALOGUE_TAB).click()
     cy.get(CATALOGUE.MAIN_PAGE.PRODUCT_CONTAINERS).filter(':visible').should('have.length.at.least', 1)
+}
+
+function goToBasket() {
+    cy.setWaitWithAction('/cart', 'loadBasket', () => {
+        cy.get(HOME.MAIN_PAGE.BASKET_BUTTON).click()
+    })
 }
 
 export default {
@@ -62,5 +66,6 @@ export default {
     logoutIfLoggedIn,
     openRegisterModal,
     register,
-    goToCatalogue
+    goToCatalogue,
+    goToBasket
 }

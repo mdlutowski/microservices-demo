@@ -20,7 +20,17 @@ export const TRANSLATION = {
         USERNAME: 'username'
     },
     CATALOGUE: {
-        SELECT_NAME: 'Name',
-        BROWN: 'brown'
+        BROWN: 'brown',
+        SELECT_NAME: 'Name'
+    },
+    BASKET: {
+        BASKET_TEXT: 'item(s) in cart',
+        MISSING_INFORMATION: 'Could not place order. Missing shipping or payment information.',
+        SHIPPING_COST: 4.99,
+        TOO_HIGH_AMOUNT: ' Error placing order. Payment declined: amount exceeds 100.00'
+    },
+    ORDERS: {
+        SHIPPED: 'Shipped',
+        VIEW: 'View'
     }
 }

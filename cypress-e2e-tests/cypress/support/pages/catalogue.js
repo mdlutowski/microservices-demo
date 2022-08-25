@@ -1,5 +1,6 @@
 import { HOME } from '../../custom/locators/home'
 import { CATALOGUE } from '../../custom/locators/catalogue'
+import { getAmountFromString } from '../helpers/common'
 
 function waitForCataloguePage() {
     cy.get(CATALOGUE.MAIN_PAGE.PRODUCT_CONTAINERS).filter(':visible').should('have.length.at.least', 1)
@@ -24,10 +25,23 @@ function clearFilter() {
     waitForCataloguePage()
 }
 
+function addProductCheaperThanUserBudget(maxPrice) {
+    cy.get(CATALOGUE.MAIN_PAGE.PRODUCT_CONTAINERS).each($product => {
+        const productPrice = getAmountFromString($product.find(CATALOGUE.MAIN_PAGE.PRODUCT_PRICE).text())
+        if (productPrice < maxPrice) {
+            cy.setWaitWithAction('/cart', 'updateBasket', () => {
+                cy.wrap($product).find(CATALOGUE.MAIN_PAGE.ADD_TO_CART_BUTTON).click()
+            })
+            return false
+        }
+    })
+}
+
 export default {
     waitForCataloguePage,
     expandCatalogueDropdown,
     sortProductsBy,
     applyFilterByName,
-    clearFilter
+    clearFilter,
+    addProductCheaperThanUserBudget
 }

@@ -92,6 +92,8 @@ context("Log in an existing user", () => {
       login('', '')
       cy.get(HOME.LOGIN_MODAL.MESSAGE).should('have.text', TRANSLATION.LOGIN.INVALID_LOGIN)
       cy.get(HOME.MAIN_PAGE.LOGGEDIN_LINK).should('not.exist')
+      //clode modal
+      cy.get(HOME.LOGIN_MODAL.MODAL).find(HOME.LOGIN_MODAL.CLOSE_BUTTON).click()
     })
   })
 })
