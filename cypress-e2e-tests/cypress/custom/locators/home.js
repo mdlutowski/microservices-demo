@@ -2,7 +2,8 @@ export const HOME = {
     MAIN_PAGE: {
         ACCOUNT_TAB: '#tabAccount',
         // BASKET_ICON: 'fa fa-shopping-cart',
-        // CATALOGUE_MENU: 'dropdown yamm-fw active',
+        CATALOGUE_OPTIONS: '.dropdown-menu a',
+        CATALOGUE_TAB: '#tabCatalogue',
         LOGGEDIN_LINK: '#howdy', 
         LOGIN_LINK: '#login a',
         LOGOUT_LINK: '#logout a',

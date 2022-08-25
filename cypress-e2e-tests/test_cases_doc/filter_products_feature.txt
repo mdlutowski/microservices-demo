@@ -1,0 +1,24 @@
+Feature: Filter products
+
+    Background:
+        Given User is on Catalogue page
+
+    //Test fails, sorting does not work
+    Scenario: User can sort products by name
+        When User sorts products by name
+        Then Products are sorted alphabetically
+
+    Scenario: User can set products numbers on page
+        When User clicks 'page size' button
+        Then Number of products displayed on page is updated accordingly
+
+    Scenario User can filter products using sidebar
+        When User checks box in sidebar
+         And User clicks 'Apply' button
+        Then Products are updated accordingly to the new filter
+         And Filtering can be cleared by using 'Clear' button
+
+    //Test fails, catalogue dropdown contains extra options
+    Scenario User can see product categories in Catalogue dropdown that match available filters
+        When User hovers over Catalogue dropdown
+        Then All options should be included in sidebar filter

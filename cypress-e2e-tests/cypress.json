@@ -1,5 +1,6 @@
 {
 "baseUrl": "http://localhost/index.html",
+"defaultCommandTimeout": 10000,
 "pageLoadTimeout": 20000,
 "video": false,
 "viewportWidth": 1280,

@@ -18,5 +18,9 @@ export const TRANSLATION = {
         REGISTER_BUTTON: 'Register',
         SUCCESSFUL_MESSAGE: 'Registration and login successful.',
         USERNAME: 'username'
+    },
+    CATALOGUE: {
+        SELECT_NAME: 'Name',
+        BROWN: 'brown'
     }
 }

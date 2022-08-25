@@ -1,4 +1,5 @@
 import { HOME } from '../../custom/locators/home'
+import { CATALOGUE } from '../../custom/locators/catalogue'
 
 function openLoginModal() {
     cy.get(HOME.LOGIN_MODAL.MODAL).then($modal => {
@@ -48,11 +49,18 @@ function register(username, firstName, lastName, email, password) {
     cy.get(HOME.REGISTER_MODAL.MODAL).find(HOME.REGISTER_MODAL.REGISTER_BUTTON).click()
 }
 
+function goToCatalogue() {
+    cy.reload() //to clear modals if opened
+    cy.get(HOME.MAIN_PAGE.CATALOGUE_TAB).click()
+    cy.get(CATALOGUE.MAIN_PAGE.PRODUCT_CONTAINERS).filter(':visible').should('have.length.at.least', 1)
+}
+
 export default {
     openLoginModal,
     login,
     logout,
     logoutIfLoggedIn,
     openRegisterModal,
-    register
+    register,
+    goToCatalogue
 }
