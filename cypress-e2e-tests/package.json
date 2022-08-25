@@ -1,4 +1,10 @@
 {
+  "name": "cypress-e2e-tests",
+  "version": "1.0.0",
+  "description": "Microservices assessment",
+  "repository": "https://github.com/mdlutowski/microservices-demo.git",
+  "main": "cypress.json",
+  "author": "Maciej Dłutowski",
   "devDependencies": {
     "cypress": "^9.7.0",
     "dayjs": "^1.11.5",
