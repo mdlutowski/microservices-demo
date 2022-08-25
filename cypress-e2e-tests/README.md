@@ -9,7 +9,8 @@ These instruction will get you a copy of the project up and running on you local
 
 ### Installing
 
-To run this project you just need to install the npm dependencies
+To run this project you just need to install the npm dependencies</br>
+[Ensure that you are in the right folder (`cd cypress-e2e-tests`)]
 
 ```
 npm install
