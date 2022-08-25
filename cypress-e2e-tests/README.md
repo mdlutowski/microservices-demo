@@ -43,8 +43,11 @@ There are remarks if some test cases fail.
 ## Design pattern
 
 For transparency and avoiding code duplication the framework uses quasi Page Object Model.<br />
-Reusable methods and locators are exported to separate files.<br />
-So every page is represented by locators in `custom/locators` and methods in `support/pages`.<br />
+Reusable methods and locators are exported to separate files. So every page is represented by locators in `custom/locators` and methods in `support/pages`.<br />
 Helper functions are kept under `support/helpers`.<br />
-Custom cypress commands can be found in `support/commnds.js`.<br />
-Test data is in `fixture` and tests cases of course are in `integration` folder.
+Framework gets advantages of cypress 9.7.0 and uses its built-in structure, so:<br />
+- custom cypress commands can be found in `support/commands.js`.<br />
+- test data is in `fixture`<br />
+- test cases are in `integration` folder.<br />
+- some configuration for plugins in `plugins/index.js` (no configuration now, but keeping file as a reference)
+- some test prerequisities are in `support/index.js`
