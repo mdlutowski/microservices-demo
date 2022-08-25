@@ -1,6 +1,13 @@
 {
   "devDependencies": {
     "cypress": "^9.7.0",
-    "dayjs": "^1.11.5"
+    "dayjs": "^1.11.5",
+    "prettier": "^2.7.1"
+  },
+  "scripts": {
+    "cy": "cypress open",
+    "cy:run": "cypress run --browser chrome --headed",
+    "cy:run:headless": "cypress run --browser chrome --headless",
+    "prettify": "prettier --write \"cypress/**/**/*.js\""
   }
 }
