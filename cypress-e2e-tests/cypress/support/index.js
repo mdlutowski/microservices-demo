@@ -1,9 +1,9 @@
-import "./commands";
+import './commands'
 
-Cypress.on("uncaught:exception", () => {
-  return false;
-});
+Cypress.on('uncaught:exception', () => {
+  return false
+})
 
 before(function () {
-  cy.visit("/");
-});
+  cy.visit('/')
+})
