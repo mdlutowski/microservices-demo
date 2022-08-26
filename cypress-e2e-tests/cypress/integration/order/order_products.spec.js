@@ -3,7 +3,10 @@ import { BASKET } from '../../custom/locators/basket'
 import { ORDERS } from '../../custom/locators/my_orders'
 import { goToCatalogue } from '../../support/pages/home'
 import { login, logoutIfLoggedIn, goToBasket } from '../../support/pages/home'
-import { addProductCheaperThanUserBudget } from '../../support/pages/catalogue'
+import {
+  addProductCheaperThanUserBudget,
+  addProductMoreExpensiveThanUserBudget
+} from '../../support/pages/catalogue'
 import { clearBasket, completeOrder } from '../../support/pages/basket'
 import {
   storeSession,
@@ -15,7 +18,6 @@ import dayjs from 'dayjs'
 
 context('Order products', () => {
   before(() => {
-    cy.reload()
     login(Cypress.config('mainUser'), Cypress.config('mainPassword'))
     cy.get(HOME.LOGIN_MODAL.MODAL).should('be.not.visible')
   })
@@ -99,7 +101,7 @@ context('Order products', () => {
 
   describe('Fail to order product from catalogue', () => {
     it('should decline payment exceeding $100', () => {
-      addProductCheaperThanUserBudget(100)
+      addProductMoreExpensiveThanUserBudget(95)
       goToBasket()
       completeOrder(false)
       cy.get(BASKET.NOTIFICATION).should(
@@ -111,7 +113,7 @@ context('Order products', () => {
     it('should fail to finalize order if shipping or payment information is missing', () => {
       logoutIfLoggedIn()
       goToCatalogue()
-      addProductCheaperThanUserBudget(100)
+      addProductMoreExpensiveThanUserBudget(95)
       goToBasket()
       completeOrder(false)
       cy.get(BASKET.NOTIFICATION).should(

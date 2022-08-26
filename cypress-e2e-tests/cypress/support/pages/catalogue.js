@@ -45,11 +45,26 @@ function addProductCheaperThanUserBudget(maxPrice) {
   })
 }
 
+function addProductMoreExpensiveThanUserBudget(minPrice) {
+  cy.get(CATALOGUE.MAIN_PAGE.PRODUCT_CONTAINERS).each(($product) => {
+    const productPrice = getAmountFromString(
+      $product.find(CATALOGUE.MAIN_PAGE.PRODUCT_PRICE).text()
+    )
+    if (productPrice > minPrice) {
+      cy.setWaitWithAction('/cart', 'updateBasket', () => {
+        cy.wrap($product).find(CATALOGUE.MAIN_PAGE.ADD_TO_CART_BUTTON).click()
+      })
+      return false
+    }
+  })
+}
+
 export default {
   waitForCataloguePage,
   expandCatalogueDropdown,
   sortProductsBy,
   applyFilterByName,
   clearFilter,
-  addProductCheaperThanUserBudget
+  addProductCheaperThanUserBudget,
+  addProductMoreExpensiveThanUserBudget
 }
