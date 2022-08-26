@@ -23,5 +23,5 @@ function completeOrder(shouldComplete = true) {
 
 export default {
   clearBasket,
-  completeOrder,
+  completeOrder
 }

@@ -2,7 +2,7 @@ import {
   openLoginModal,
   login,
   logout,
-  logoutIfLoggedIn,
+  logoutIfLoggedIn
 } from '../../support/pages/home'
 import { HOME } from '../../custom/locators/home'
 import { TRANSLATION } from '../../custom/translation/strings'

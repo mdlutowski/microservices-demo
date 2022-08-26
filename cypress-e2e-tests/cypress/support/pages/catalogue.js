@@ -51,5 +51,5 @@ export default {
   sortProductsBy,
   applyFilterByName,
   clearFilter,
-  addProductCheaperThanUserBudget,
+  addProductCheaperThanUserBudget
 }

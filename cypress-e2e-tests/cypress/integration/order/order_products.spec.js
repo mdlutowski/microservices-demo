@@ -8,7 +8,7 @@ import { clearBasket, completeOrder } from '../../support/pages/basket'
 import {
   storeSession,
   getAmountFromString,
-  parseAmount,
+  parseAmount
 } from '../../support/helpers/common'
 import { TRANSLATION } from '../../custom/translation/strings'
 import dayjs from 'dayjs'

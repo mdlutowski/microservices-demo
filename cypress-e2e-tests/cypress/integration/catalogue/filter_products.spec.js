@@ -6,7 +6,7 @@ import {
   waitForCataloguePage,
   sortProductsBy,
   applyFilterByName,
-  clearFilter,
+  clearFilter
 } from '../../support/pages/catalogue'
 import { getLastNumberInString } from '../../support/helpers/common'
 import { TRANSLATION } from '../../custom/translation/strings'

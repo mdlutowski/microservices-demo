@@ -75,5 +75,5 @@ export default {
   openRegisterModal,
   register,
   goToCatalogue,
-  goToBasket,
+  goToBasket
 }

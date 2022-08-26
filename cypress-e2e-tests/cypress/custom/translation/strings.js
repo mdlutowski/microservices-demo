@@ -6,7 +6,7 @@ export const TRANSLATION = {
     LOGIN_BUTTON: 'Log in',
     PASSWORD: 'password',
     SUCCESSFUL_MESSAGE: 'Login successful.',
-    USERNAME: 'username',
+    USERNAME: 'username'
   },
   REGISTER: {
     EMAIL: 'email',
@@ -18,11 +18,11 @@ export const TRANSLATION = {
     PASSWORD: 'password',
     REGISTER_BUTTON: 'Register',
     SUCCESSFUL_MESSAGE: 'Registration and login successful.',
-    USERNAME: 'username',
+    USERNAME: 'username'
   },
   CATALOGUE: {
     BROWN: 'brown',
-    SELECT_NAME: 'Name',
+    SELECT_NAME: 'Name'
   },
   BASKET: {
     BASKET_TEXT: 'item(s) in cart',
@@ -30,10 +30,10 @@ export const TRANSLATION = {
       'Could not place order. Missing shipping or payment information.',
     SHIPPING_COST: 4.99,
     TOO_HIGH_AMOUNT:
-      ' Error placing order. Payment declined: amount exceeds 100.00',
+      ' Error placing order. Payment declined: amount exceeds 100.00'
   },
   ORDERS: {
     SHIPPED: 'Shipped',
-    VIEW: 'View',
-  },
+    VIEW: 'View'
+  }
 }

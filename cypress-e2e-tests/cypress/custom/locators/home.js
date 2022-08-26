@@ -8,7 +8,7 @@ export const HOME = {
     LOGIN_LINK: '#login a',
     LOGOUT_LINK: '#logout a',
     REGISTER_LINK: '#register a',
-    TOP_CONTAINER: '#top',
+    TOP_CONTAINER: '#top'
   },
   LOGIN_MODAL: {
     CLOSE_BUTTON: '.close',
@@ -17,7 +17,7 @@ export const HOME = {
     MESSAGE: '#login-message',
     MODAL: '#login-modal .modal-content',
     PASSWORD: '#password-modal',
-    USERNAME: '#username-modal',
+    USERNAME: '#username-modal'
   },
   REGISTER_MODAL: {
     CLOSE_BUTTON: '.close',
@@ -29,6 +29,6 @@ export const HOME = {
     MODAL: '#register-modal .modal-content',
     PASSWORD: '#register-password-modal',
     REGISTER_BUTTON: '.btn-primary',
-    USERNAME: '#register-username-modal',
-  },
+    USERNAME: '#register-username-modal'
+  }
 }
