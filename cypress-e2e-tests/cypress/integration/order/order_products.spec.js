@@ -8,11 +8,7 @@ import {
   addProductMoreExpensiveThanUserBudget
 } from '../../support/pages/catalogue'
 import { clearBasket, completeOrder } from '../../support/pages/basket'
-import {
-  storeSession,
-  getAmountFromString,
-  parseAmount
-} from '../../support/helpers/common'
+import { getAmountFromString, parseAmount } from '../../support/helpers/common'
 import { TRANSLATION } from '../../custom/translation/strings'
 import dayjs from 'dayjs'
 
@@ -23,7 +19,7 @@ context('Order products', () => {
   })
 
   beforeEach(() => {
-    storeSession()
+    cy.storeSession()
     clearBasket()
     goToCatalogue()
   })

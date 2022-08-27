@@ -11,3 +11,7 @@ Cypress.Commands.add('setWaitWithAction', (route, alias, action) => {
   action()
   cy.wait(`@${alias}`)
 })
+
+Cypress.Commands.add('storeSession', () => {
+  Cypress.Cookies.preserveOnce('logged_in', 'md.sid')
+})

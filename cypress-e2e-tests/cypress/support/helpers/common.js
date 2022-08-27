@@ -1,7 +1,3 @@
-export function storeSession() {
-  Cypress.Cookies.preserveOnce('logged_in', 'md.sid')
-}
-
 export function getLastNumberInString(text) {
   //Replace all characters except digits & whitespace
   text = text.replace(/[^\d\s]+/g, '')
